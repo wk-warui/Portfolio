@@ -1,17 +1,28 @@
 /* Modern Portfolio Styling */
 
 :root {
-    /* Colors */
-    --color-primary: #2563eb;
-    --color-primary-light: #60a5fa;
-    --color-primary-dark: #1e40af;
-    --color-accent: #8b5cf6;
-    --color-success: #10b981;
+    /* Core Colors - Black and White Theme */
+    --color-primary: #000000;
+    --color-secondary: #1a1a1a;
     --color-background: #ffffff;
-    --color-surface: #f8fafc;
-    --color-text: #1e293b;
-    --color-text-light: #64748b;
-    --color-border: #e2e8f0;
+    --color-surface: #f8f8f8;
+    --color-text: #000000;
+    --color-text-light: #666666;
+    --color-border: #e0e0e0;
+    
+    /* Monochrome Gradients */
+    --gradient-primary: linear-gradient(135deg, #000000, #1a1a1a);
+    --gradient-surface: linear-gradient(135deg, #ffffff, #f8f8f8);
+    
+    /* Refined Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+    --shadow-lg: 0 8px 15px rgba(0, 0, 0, 0.08);
+    --shadow-xl: 0 15px 30px rgba(0, 0, 0, 0.1);
+
+    /* Enhanced Hover States */
+    --hover-background: #f3f3f3;
+    --hover-text: #000000;
     
     /* Typography */
     --font-main: 'Inter', system-ui, -apple-system, sans-serif;
@@ -25,12 +36,6 @@
     
     /* Transitions */
     --transition: all 0.3s ease;
-
-    /* Shadows */
-    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
-    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
-    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
 
     /* Animations */
     --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -62,9 +67,9 @@
 
 body {
     font-family: var(--font-main);
-    color: var(--color-gray-900);
+    color: var(--color-text);
     line-height: 1.6;
-    background: var(--color-white);
+    background-color: var(--color-background);
 }
 
 .container {
@@ -79,8 +84,8 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background: var(--color-white);
-    border-bottom: 1px solid var(--color-gray-200);
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid var(--color-border);
     z-index: 1000;
     padding: 1rem 0;
 }
@@ -99,14 +104,14 @@ body {
 }
 
 .nav-links a {
-    color: var(--color-gray-600);
+    color: var(--color-text-light);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: var(--color-black);
+    color: var(--color-text);
 }
 
 /* Hero Section */
@@ -171,15 +176,15 @@ body {
 
 /* Services Section */
 .service-card {
-    background: var(--color-white);
-    border: 1px solid var(--color-gray-200);
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
     padding: 2rem;
     border-radius: 8px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
     box-shadow: var(--shadow-lg);
 }
 
@@ -199,7 +204,7 @@ body {
 
 /* Contact Section */
 .contact-form {
-    background: var(--color-white);
+    background: var(--color-background);
     padding: 2rem;
     border-radius: 8px;
     box-shadow: var(--shadow-md);
@@ -214,39 +219,60 @@ body {
 .form-group textarea {
     width: 100%;
     padding: 0.75rem;
-    border: 1px solid var(--color-gray-300);
+    border: 2px solid var(--color-border);
     border-radius: 4px;
     transition: border-color 0.3s ease;
+    background: var(--color-background);
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--color-black);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
 }
 
 .button-primary {
-    background: var(--color-black);
-    color: var(--color-white);
+    background: var(--color-primary);
+    color: var(--color-background);
     padding: 1rem 2rem;
     border: none;
     border-radius: 4px;
     font-weight: 500;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .button-primary:hover {
-    background: var(--color-gray-800);
+    background: var(--color-secondary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.button-secondary {
+    background: var(--color-background);
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button-secondary:hover {
+    background: var(--color-surface);
+    transform: translateY(-2px);
 }
 
 /* Footer */
 .footer {
-    background: var(--color-gray-100);
+    background: var(--color-surface);
     padding: 2rem 0;
     text-align: center;
     margin-top: 4rem;
+    border-top: 1px solid var(--color-border);
 }
 
 /* Responsive Design */
@@ -315,7 +341,7 @@ body {
     height: 4px;
     background: linear-gradient(90deg,
         var(--color-primary) 0%,
-        var(--color-accent) 100%);
+        var(--color-secondary) 100%);
     transform: scaleX(0);
     transform-origin: left;
     transition: var(--transition-normal);
@@ -372,6 +398,8 @@ body {
     border-radius: 12px;
     box-shadow: var(--shadow-md);
     transition: var(--transition-normal);
+    border-left: 3px solid var(--color-primary);
+    padding-left: 1.5rem;
 }
 
 .timeline-content::before {
@@ -430,7 +458,7 @@ body {
 
 .fab:hover {
     transform: scale(1.1);
-    background: var(--color-primary-dark);
+    background: var(--color-secondary);
 }
 
 /* Toast Notifications */
@@ -597,4 +625,73 @@ body {
     .toast-container {
         display: none;
     }
+}
+
+/* Enhanced Section Titles */
+.section-title {
+    color: var(--color-text);
+    border-bottom: 2px solid var(--color-primary);
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+/* Refined Contact Links */
+.contact-link {
+    color: var(--color-text);
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    color: var(--color-text-light);
+}
+
+/* Enhanced Status Badges */
+.status-badge {
+    background: var(--color-primary);
+    color: var(--color-background);
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.875rem;
+}
+
+/* Enhanced Service Lists */
+.service-list li {
+    border-bottom: 1px solid var(--color-border);
+    padding: 0.5rem 0;
+}
+
+.service-list li:last-child {
+    border-bottom: none;
+}
+
+/* Enhanced Hover Effects */
+.hover-effect {
+    transition: all 0.3s ease;
+}
+
+.hover-effect:hover {
+    background: var(--hover-background);
+    color: var(--hover-text);
+}
+
+/* Refined Form Submit Button */
+button[type="submit"] {
+    background: var(--color-primary);
+    color: var(--color-background);
+    border: none;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background: var(--color-secondary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Enhanced Selection Style */
+::selection {
+    background: var(--color-primary);
+    color: var(--color-background);
 }
