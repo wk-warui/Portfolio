@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  base: '/writing-portfolio/',
+  base: '/kelvin-warui-portfolio/',
   build: {
     outDir: 'dist'
   }

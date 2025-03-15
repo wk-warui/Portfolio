@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Kelvin Warui's Technical Writing Blog</title>
+    <link>https://kelvinwarui.com/blog</link>
+    <description>Technical writing insights, API documentation tips, and content strategy</description>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 15 Mar 2024 12:00:00 GMT</lastBuildDate>
+    
+    <item>
+      <title>API Documentation Best Practices in 2024</title>
+      <link>https://kelvinwarui.com/blog/api-documentation-best-practices</link>
+      <description>Learn the latest best practices for creating clear, user-friendly API documentation...</description>
+      <pubDate>Mon, 15 Mar 2024 10:00:00 GMT</pubDate>
+      <guid>https://kelvinwarui.com/blog/api-documentation-best-practices</guid>
+    </item>
+    
+    <!-- More blog posts... -->
+  </channel>
+</rss> 
