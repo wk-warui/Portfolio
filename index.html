@@ -199,5 +199,186 @@
         })();
     </script>
     <script src="js/main.js"></script>
+    <script>
+        // Form validation and submission handler
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form elements
+            const nameInput = this.querySelector('input[type="text"]');
+            const emailInput = this.querySelector('input[type="email"]');
+            const serviceInput = this.querySelector('select');
+            const messageInput = this.querySelector('textarea');
+            
+            // Reset previous error states
+            removeErrorStates();
+            
+            // Validate inputs
+            if (!validateForm(nameInput, emailInput, serviceInput, messageInput)) {
+                return;
+            }
+            
+            // Create mailto link with form data
+            const mailtoLink = `mailto:kelvinwarui457@gmail.com?subject=New Contact Form Submission&body=Name: ${nameInput.value}%0D%0AEmail: ${emailInput.value}%0D%0AService: ${serviceInput.value}%0D%0A%0D%0AMessage:%0D%0A${messageInput.value}`;
+            
+            // Show success message
+            showNotification('Opening email client...', 'success');
+            
+            // Open default email client
+            setTimeout(() => {
+                window.location.href = mailtoLink;
+                this.reset();
+            }, 1000);
+        });
+
+        // Validation function
+        function validateForm(nameInput, emailInput, serviceInput, messageInput) {
+            let isValid = true;
+
+            // Name validation
+            if (nameInput.value.trim().length < 2) {
+                showError(nameInput, 'Please enter a valid name');
+                isValid = false;
+            }
+
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(emailInput.value)) {
+                showError(emailInput, 'Please enter a valid email address');
+                isValid = false;
+            }
+
+            // Service validation
+            if (!serviceInput.value) {
+                showError(serviceInput, 'Please select a service');
+                isValid = false;
+            }
+
+            // Message validation
+            if (messageInput.value.trim().length < 10) {
+                showError(messageInput, 'Message must be at least 10 characters');
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        // Show error function
+        function showError(input, message) {
+            input.classList.add('error');
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            errorDiv.textContent = message;
+            input.parentNode.appendChild(errorDiv);
+        }
+
+        // Remove error states
+        function removeErrorStates() {
+            document.querySelectorAll('.error').forEach(element => {
+                element.classList.remove('error');
+            });
+            document.querySelectorAll('.error-message').forEach(element => {
+                element.remove();
+            });
+        }
+
+        // Show notification function
+        function showNotification(message, type) {
+            // Remove existing notifications
+            const existingNotification = document.querySelector('.notification');
+            if (existingNotification) {
+                existingNotification.remove();
+            }
+
+            // Create new notification
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.innerHTML = `
+                <div class="notification-content">
+                    <span class="notification-icon">${type === 'success' ? '✓' : '!'}</span>
+                    <span class="notification-message">${message}</span>
+                </div>
+            `;
+
+            // Add to document
+            document.body.appendChild(notification);
+
+            // Remove after delay
+            setTimeout(() => {
+                notification.classList.add('fade-out');
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+        }
+    </script>
+
+    <!-- Add these styles -->
+    <style>
+        /* Form Validation Styles */
+        .error {
+            border-color: #dc2626 !important;
+        }
+
+        .error-message {
+            color: #dc2626;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            animation: slideIn 0.3s ease;
+        }
+
+        /* Enhanced Notification Styles */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            background: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            animation: slideIn 0.3s ease;
+            z-index: 1000;
+        }
+
+        .notification-content {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .notification.success {
+            border-left: 4px solid #10b981;
+        }
+
+        .notification-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 0.875rem;
+        }
+
+        .success .notification-icon {
+            background: #10b981;
+            color: white;
+        }
+
+        .notification.fade-out {
+            opacity: 0;
+            transform: translateX(100%);
+            transition: all 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
 </body>
 </html> 
