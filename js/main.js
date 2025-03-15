@@ -124,6 +124,51 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
+
+    // Testimonials Slider
+    class TestimonialsSlider {
+        constructor() {
+            this.slider = document.querySelector('.testimonials-slider');
+            this.slides = this.slider.children;
+            this.currentSlide = 0;
+            this.init();
+        }
+
+        init() {
+            if (this.slides.length > 1) {
+                this.autoSlide();
+                this.addTouchSupport();
+            }
+        }
+
+        autoSlide() {
+            setInterval(() => {
+                this.currentSlide = (this.currentSlide + 1) % this.slides.length;
+                this.slider.scrollTo({
+                    left: this.slides[this.currentSlide].offsetLeft,
+                    behavior: 'smooth'
+                });
+            }, 5000);
+        }
+
+        addTouchSupport() {
+            let startX, scrollLeft;
+
+            this.slider.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].pageX - this.slider.offsetLeft;
+                scrollLeft = this.slider.scrollLeft;
+            });
+
+            this.slider.addEventListener('touchmove', (e) => {
+                e.preventDefault();
+                const x = e.touches[0].pageX - this.slider.offsetLeft;
+                const walk = (x - startX) * 2;
+                this.slider.scrollLeft = scrollLeft - walk;
+            });
+        }
+    }
+
+    new TestimonialsSlider();
 });
 
 async function handleFormSubmit(e) {

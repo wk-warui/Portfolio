@@ -1,0 +1,20 @@
+/* Dark Mode Styles */
+[data-theme="dark"] {
+    --surface-light: #1a1a1a;
+    --surface-dark: #2d2d2d;
+    --text-primary: #e0e0e0;
+    --text-secondary: #a0a0a0;
+    --grey-light: #333333;
+    --grey-medium: #4a4a4a;
+    --grey-dark: #666666;
+    
+    /* Dark mode specific shadows */
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --card-border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Dark Mode Transitions */
+body {
+    transition: background-color var(--transition-normal),
+                color var(--transition-normal);
+} 
