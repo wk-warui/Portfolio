@@ -1,36 +1,30 @@
-/* Modern, Clean Portfolio Design */
+/* Modern Portfolio Styling */
 
-/* 1. Variables & Config
-------------------------------------------------- */
 :root {
-    /* Refined Color Palette */
+    /* Colors */
     --color-primary: #2563eb;
-    --color-secondary: #3b82f6;
+    --color-secondary: #1e40af;
     --color-background: #ffffff;
     --color-surface: #f8fafc;
     --color-text: #1e293b;
     --color-text-light: #64748b;
     --color-border: #e2e8f0;
     
-    /* Subtle Shadows */
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
-    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.05);
-    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.06);
-    
     /* Typography */
-    --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-main: 'Inter', system-ui, -apple-system, sans-serif;
     
     /* Spacing */
-    --space-1: 0.25rem;
-    --space-2: 0.5rem;
-    --space-4: 1rem;
-    --space-6: 1.5rem;
-    --space-8: 2rem;
-    --space-12: 3rem;
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 4rem;
+    --space-xl: 8rem;
+    
+    /* Transitions */
+    --transition: all 0.3s ease;
 }
 
-/* 2. Base Styles
-------------------------------------------------- */
+/* Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -39,228 +33,221 @@
 
 body {
     font-family: var(--font-main);
-    background-color: var(--color-background);
     color: var(--color-text);
     line-height: 1.6;
+    background: var(--color-background);
 }
 
-/* 3. Layout & Grid
-------------------------------------------------- */
 .container {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 var(--space-sm);
 }
 
-.grid {
-    display: grid;
-    /* ... grid styles */
-}
-
-/* 4. Components
-------------------------------------------------- */
 /* Navigation */
 .navbar {
-    padding: var(--space-4) 0;
-    background: rgba(255, 255, 255, 0.98);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--color-border);
+    z-index: 1000;
 }
 
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 var(--space-4);
+.navbar .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 80px;
 }
 
 .nav-logo {
-    font-weight: 600;
-    font-size: 1.25rem;
-    color: var(--color-text);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
     text-decoration: none;
 }
 
 .nav-links {
     display: flex;
-    gap: var(--space-6);
+    gap: var(--space-md);
 }
 
-.nav-link {
-    color: var(--color-text-light);
+.nav-links a {
+    color: var(--color-text);
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.2s ease;
+    transition: var(--transition);
 }
 
-.nav-link:hover {
+.nav-links a:hover {
     color: var(--color-primary);
 }
 
 /* Hero Section */
 .hero {
-    padding: var(--space-12) 0;
+    padding: var(--space-xl) 0;
     background: var(--color-surface);
+    margin-top: 80px;
 }
 
 .hero-content {
-    max-width: 1200px;
+    text-align: center;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 0 var(--space-4);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-8);
-    align-items: center;
 }
 
-.hero-text h1 {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    font-weight: 700;
+.hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    margin-bottom: var(--space-sm);
     line-height: 1.2;
-    margin-bottom: var(--space-4);
-    color: var(--color-text);
 }
 
-.hero-text p {
-    font-size: 1.125rem;
+.hero-subtitle {
+    font-size: 1.25rem;
     color: var(--color-text-light);
-    margin-bottom: var(--space-6);
+    margin-bottom: var(--space-md);
+}
+
+.hero-cta {
+    display: flex;
+    gap: var(--space-sm);
+    justify-content: center;
+}
+
+/* Buttons */
+.button-primary {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: var(--color-primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.button-primary:hover {
+    background: var(--color-secondary);
+    transform: translateY(-2px);
+}
+
+.button-secondary {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: white;
+    color: var(--color-primary);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    border: 2px solid var(--color-primary);
+    transition: var(--transition);
+}
+
+.button-secondary:hover {
+    background: var(--color-primary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Section Styling */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: var(--space-lg);
 }
 
 /* Project Cards */
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: var(--space-6);
-    padding: var(--space-8) var(--space-4);
-    max-width: 1200px;
-    margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-md);
 }
 
 .project-card {
-    background: var(--color-background);
-    border: 1px solid var(--color-border);
+    background: white;
     border-radius: 12px;
     overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
 }
 
 .project-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-.project-image {
+.project-image img {
     width: 100%;
     height: 200px;
     object-fit: cover;
 }
 
 .project-content {
-    padding: var(--space-4);
+    padding: var(--space-md);
 }
 
 .project-title {
     font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: var(--space-2);
-    color: var(--color-text);
+    margin-bottom: var(--space-xs);
 }
 
-.project-description {
-    color: var(--color-text-light);
-    font-size: 0.875rem;
-    margin-bottom: var(--space-4);
+.project-tags {
+    display: flex;
+    gap: var(--space-xs);
+    margin: var(--space-sm) 0;
 }
 
-/* Skills Section */
-.skills-section {
+.tag {
+    padding: 0.25rem 0.75rem;
     background: var(--color-surface);
-    padding: var(--space-12) 0;
-}
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: var(--space-6);
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 var(--space-4);
-}
-
-.skill-card {
-    background: var(--color-background);
-    padding: var(--space-4);
-    border-radius: 8px;
-    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    font-size: 0.875rem;
 }
 
 /* Contact Section */
-.contact-section {
-    max-width: 600px;
-    margin: var(--space-12) auto;
-    padding: 0 var(--space-4);
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--space-lg);
 }
 
-.contact-form input,
-.contact-form textarea {
+.contact-form {
+    display: grid;
+    gap: var(--space-sm);
+}
+
+.form-group input,
+.form-group textarea {
     width: 100%;
-    padding: var(--space-4);
-    margin-bottom: var(--space-4);
+    padding: 1rem;
     border: 1px solid var(--color-border);
     border-radius: 8px;
-    font-family: var(--font-main);
+    font-family: inherit;
 }
 
-.button {
-    background: var(--color-primary);
-    color: white;
-    padding: var(--space-4) var(--space-8);
-    border: none;
-    border-radius: 8px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-
-.button:hover {
-    background: var(--color-secondary);
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
 }
 
 /* Footer */
 .footer {
     background: var(--color-surface);
-    padding: var(--space-8) 0;
-    border-top: 1px solid var(--color-border);
+    padding: var(--space-md) 0;
+    text-align: center;
+    margin-top: var(--space-xl);
 }
 
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 var(--space-4);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* 5. Utilities
-------------------------------------------------- */
-.text-center { text-align: center; }
-.mb-4 { margin-bottom: 1rem; }
-.mb-8 { margin-bottom: var(--space-8); }
-
-/* 6. Media Queries
-------------------------------------------------- */
+/* Responsive Design */
 @media (max-width: 768px) {
-    .hero-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .project-grid {
+    .contact-grid {
         grid-template-columns: 1fr;
     }
-
+    
     .nav-links {
         display: none;
     }
