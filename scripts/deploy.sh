@@ -1,25 +1,49 @@
 #!/bin/bash
 
-# Deployment script
-echo "Starting deployment..."
+# Colors for output
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+NC='\033[0m' # No Color
 
-# Build the project
-npm run build
+echo "🚀 Starting deployment process..."
 
-# Run tests
-npm test
+# Check if git status is clean
+if [ -n "$(git status --porcelain)" ]; then
+    echo "${RED}⚠️  You have uncommitted changes. Please commit or stash them first.${NC}"
+    exit 1
+fi
 
-# Optimize images
-echo "Optimizing images..."
-find build/images -type f -name "*.jpg" -exec jpegoptim --strip-all --max=85 {} \;
-find build/images -type f -name "*.png" -exec optipng -o5 {} \;
+# Pull latest changes
+echo "📥 Pulling latest changes..."
+git pull origin main
 
-# Deploy to server
-echo "Deploying to server..."
-rsync -avz --delete build/ user@your-server:/var/www/kelvinwarui.com/
+# Run pre-deployment checks
+echo "🔍 Running pre-deployment checks..."
 
-# Clear cache
-echo "Clearing cache..."
-curl -X PURGE https://kelvinwarui.com/*
+# Check HTML files
+echo "Checking HTML files..."
+if [ ! -f "index.html" ]; then
+    echo "${RED}❌ index.html not found${NC}"
+    exit 1
+fi
 
-echo "Deployment complete!" 
+# Check CSS files
+echo "Checking CSS files..."
+if [ ! -f "css/styles.css" ]; then
+    echo "${RED}❌ styles.css not found${NC}"
+    exit 1
+fi
+
+# Check JS files
+echo "Checking JS files..."
+if [ ! -f "js/main.js" ]; then
+    echo "${RED}❌ main.js not found${NC}"
+    exit 1
+fi
+
+# Push to main branch
+echo "📤 Pushing to main branch..."
+git push origin main
+
+echo "${GREEN}✅ Deployment initiated successfully!${NC}"
+echo "🌐 Monitor deployment status at: https://github.com/{username}/{repository}/actions" 
