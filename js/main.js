@@ -1,4 +1,64 @@
-document.addEventListener('DOMContentLoaded', function() {
+// main.js - Organized Structure
+
+// 1. Constants & Config
+const CONFIG = {
+    animationDuration: 300,
+    breakpoints: {
+        mobile: 768,
+        tablet: 1024
+    }
+};
+
+// 2. Utility Functions
+const utils = {
+    debounce(func, wait) {
+        // ... debounce implementation
+    },
+    
+    formatDate(date) {
+        // ... date formatting
+    }
+};
+
+// 3. Component Classes
+class Navigation {
+    constructor() {
+        // ... navigation setup
+    }
+    
+    init() {
+        // ... initialize navigation
+    }
+}
+
+class ProjectFilter {
+    constructor() {
+        // ... project filter setup
+    }
+    
+    init() {
+        // ... initialize filtering
+    }
+}
+
+// 4. Event Handlers
+function handleScroll() {
+    // ... scroll handling
+}
+
+function handleFormSubmit(event) {
+    // ... form submission
+}
+
+// 5. Initialization
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize components
+    const nav = new Navigation();
+    nav.init();
+    
+    // Setup event listeners
+    window.addEventListener('scroll', handleScroll);
+
     // Form handling
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
@@ -43,12 +103,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Navigation Scroll Effect
-    const nav = document.querySelector('.nav');
+    const navElement = document.querySelector('.nav');
     window.addEventListener('scroll', () => {
         if (window.pageYOffset > 50) {
-            nav.classList.add('scrolled');
+            navElement.classList.add('scrolled');
         } else {
-            nav.classList.remove('scrolled');
+            navElement.classList.remove('scrolled');
         }
     });
 
