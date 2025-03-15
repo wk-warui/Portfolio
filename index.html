@@ -8,107 +8,181 @@
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+    </button>
+
     <!-- Navigation -->
     <nav class="nav">
-        <div class="container">
-            <ul>
-                <li><a href="#about">About</a></li>
+        <div class="container nav-container">
+            <a href="#" class="logo">KW</a>
+            <ul class="nav-links">
+                <li><a href="#about" class="active">About</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <button class="mobile-menu" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </nav>
 
     <!-- Header Section -->
     <header class="header">
         <div class="container">
-        <div class="profile-section">
             <div class="profile-info">
-                <h1>Kelvin Warui</h1>
-                <p>Technical Writer & Content Strategist</p>
-                <div class="contact-badges">
-                    <span class="contact-badge">
-                        <i class="fas fa-map-marker-alt"></i> Nairobi, Kenya
-                    </span>
-                    <span class="contact-badge">
-                        <i class="fas fa-phone"></i> +254769630531
-                    </span>
-                    <a href="https://wa.me/254769630531" class="contact-badge whatsapp" target="_blank">
-                        <i class="fab fa-whatsapp"></i> WhatsApp
-                    </a>
+                <div class="profile-text">
+                    <span class="greeting">Hello, I'm</span>
+                    <h1>Kelvin Warui</h1>
+                    <p class="title">Technical Writer & Content Strategist</p>
+                    <div class="contact-badges">
+                        <span class="badge"><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</span>
+                        <a href="tel:+254769630531" class="badge"><i class="fas fa-phone"></i> +254 769 630 531</a>
+                        <a href="https://wa.me/254769630531" class="badge whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    </div>
                 </div>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                    <a href="#portfolio" class="btn btn-secondary">View Portfolio</a>
                 </div>
             </div>
         </div>
+        <div class="header-shape"></div>
     </header>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio-section">
-        <!-- Portfolio content -->
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+                <div class="about-content">
+                    <p class="lead">Transforming complex ideas into clear, engaging content that drives results.</p>
+                    <p>With a passion for clarity and precision, I specialize in creating technical content that bridges the gap between complex technologies and their users.</p>
+                    <div class="skills-container">
+                        <h3>Core Skills</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>Technical Writing</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>Content Strategy</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>SEO Writing</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Technical Articles</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">Client Satisfaction</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">24h</span>
+                        <span class="stat-label">Avg. Response Time</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="container">
-            <h2>Get in Touch</h2>
+            <h2 class="section-title">Get in Touch</h2>
             <div class="contact-grid">
                 <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <ul class="contact-list">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Nairobi, Kenya</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone"></i>
-                            <a href="tel:+254769630531">+254 769 630 531</a>
-                        </li>
-                        <li>
-                            <i class="fab fa-whatsapp"></i>
-                            <a href="https://wa.me/254769630531" target="_blank">WhatsApp Chat</a>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <a href="mailto:kelvinwarui457@gmail.com">kelvinwarui457@gmail.com</a>
-                        </li>
-                        <li>
-                            <i class="fab fa-linkedin"></i>
-                            <a href="https://www.linkedin.com/in/kelvin-warui-79780224b" target="_blank">LinkedIn Profile</a>
-                        </li>
-                    </ul>
+                    <div class="contact-card">
+                        <h3>Contact Information</h3>
+                        <ul class="contact-list">
+                            <li>
+                                <i class="fas fa-phone"></i>
+                                <div class="contact-detail">
+                                    <span class="label">Phone</span>
+                                    <a href="tel:+254769630531">+254 769 630 531</a>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fab fa-whatsapp"></i>
+                                <div class="contact-detail">
+                                    <span class="label">WhatsApp</span>
+                                    <a href="https://wa.me/254769630531">Message me</a>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <div class="contact-detail">
+                                    <span class="label">Email</span>
+                                    <a href="mailto:kelvinwarui457@gmail.com">kelvinwarui457@gmail.com</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-
                 <form id="contactForm" class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Name *</label>
-                        <input type="text" id="name" name="name" required>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" required>
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="5" required></textarea>
                     </div>
-                    <div class="form-group">
-                        <label for="message">Message *</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-button">Send Message</button>
+                    <button type="submit" class="btn btn-primary">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Floating WhatsApp Button -->
-    <div class="floating-whatsapp">
-        <a href="https://wa.me/254769630531" target="_blank" class="whatsapp-float">
-            <i class="fab fa-whatsapp"></i>
-            <span class="tooltip">Chat on WhatsApp</span>
-        </a>
-    </div>
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/254769630531" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="tooltip">Chat on WhatsApp</span>
+    </a>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <!-- Scripts -->
     <script src="js/main.js"></script>
