@@ -1,0 +1,235 @@
+/* Portfolio Detail Styles */
+.article-header {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    padding: var(--spacing-xl) 0;
+    margin-top: 60px;
+}
+
+.back-link {
+    color: white;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.article-meta {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+    opacity: 0.9;
+}
+
+.article-content {
+    padding: var(--spacing-xl) 0;
+}
+
+.content-wrapper {
+    display: grid;
+    grid-template-columns: 250px 1fr 300px;
+    gap: var(--spacing-xl);
+}
+
+/* Table of Contents */
+.table-of-contents {
+    position: sticky;
+    top: 80px;
+    height: fit-content;
+    background: var(--bg);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+}
+
+.table-of-contents ul {
+    list-style: none;
+    padding: 0;
+}
+
+.table-of-contents a {
+    color: var(--text);
+    text-decoration: none;
+    display: block;
+    padding: var(--spacing-xs) 0;
+    transition: var(--transition);
+}
+
+.table-of-contents a:hover {
+    color: var(--primary);
+}
+
+/* Main Content */
+.main-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.main-content h2 {
+    margin: var(--spacing-xl) 0 var(--spacing-md);
+}
+
+.code-block {
+    background: var(--bg-light);
+    border-radius: var(--border-radius);
+    margin: var(--spacing-md) 0;
+    overflow: hidden;
+}
+
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: rgba(0,0,0,0.1);
+}
+
+.copy-btn {
+    background: none;
+    border: none;
+    color: var(--text);
+    cursor: pointer;
+    padding: var(--spacing-xs);
+}
+
+.code-block pre {
+    padding: var(--spacing-md);
+    overflow-x: auto;
+}
+
+/* Sidebar */
+.article-sidebar {
+    position: sticky;
+    top: 80px;
+    height: fit-content;
+}
+
+.author-card {
+    background: var(--bg);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.author-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: var(--spacing-sm);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+}
+
+.related-articles {
+    background: var(--bg);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+}
+
+.category-tag {
+    display: inline-block;
+    font-size: 0.8rem;
+    padding: 2px 8px;
+    background: var(--primary);
+    color: white;
+    border-radius: 12px;
+    margin-left: var(--spacing-xs);
+}
+
+/* Article Footer */
+.article-footer {
+    background: var(--bg-light);
+    padding: var(--spacing-xl) 0;
+    margin-top: var(--spacing-xl);
+}
+
+.share-buttons {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.social-share {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.share-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.share-btn.twitter {
+    background: #1DA1F2;
+    color: white;
+}
+
+.share-btn.linkedin {
+    background: #0077B5;
+    color: white;
+}
+
+.share-btn.copy-link {
+    background: var(--bg);
+    color: var(--text);
+}
+
+.article-nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+}
+
+.prev-article,
+.next-article {
+    text-decoration: none;
+    color: var(--text);
+    padding: var(--spacing-md);
+    background: var(--bg);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.next-article {
+    text-align: right;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .content-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .table-of-contents,
+    .article-sidebar {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .article-nav {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .next-article {
+        text-align: left;
+    }
+}

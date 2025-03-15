@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started with GraphQL - Kelvin Warui</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/portfolio-detail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation (same as main page) -->
+    
+    <!-- Article Header -->
+    <header class="article-header">
+        <div class="container">
+            <a href="../index.html#portfolio" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back to Portfolio
+            </a>
+            <span class="category">Tutorial</span>
+            <h1>Getting Started with GraphQL</h1>
+            <div class="article-meta">
+                <span><i class="far fa-calendar"></i> March 15, 2024</span>
+                <span><i class="fas fa-clock"></i> 15 min read</span>
+                <span><i class="fas fa-eye"></i> 13K+ views</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Article Content -->
+    <article class="article-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <!-- Table of Contents -->
+                <div class="table-of-contents">
+                    <h2>Contents</h2>
+                    <ul>
+                        <li><a href="#introduction">Introduction to GraphQL</a></li>
+                        <li><a href="#setup">Setting Up Your Environment</a></li>
+                        <li><a href="#basics">GraphQL Basics</a></li>
+                        <li><a href="#queries">Writing Queries</a></li>
+                        <li><a href="#mutations">Handling Mutations</a></li>
+                        <li><a href="#best-practices">Best Practices</a></li>
+                    </ul>
+                </div>
+
+                <!-- Main Content -->
+                <div class="main-content">
+                    <section id="introduction">
+                        <h2>Introduction to GraphQL</h2>
+                        <p>GraphQL is a query language for APIs that gives clients the power to request exactly what they need...</p>
+                        <!-- More content -->
+                    </section>
+
+                    <!-- Code example section -->
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Basic GraphQL Query</span>
+                            <button class="copy-btn" data-clipboard-target="#code1">
+                                <i class="far fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code id="code1">
+query {
+    user(id: "123") {
+        name
+        email
+        posts {
+            title
+            content
+        }
+    }
+}
+                        </code></pre>
+                    </div>
+
+                    <!-- More sections -->
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="article-sidebar">
+                    <div class="author-card">
+                        <img src="../images/profile.jpg" alt="Kelvin Warui" class="author-image">
+                        <h3>Kelvin Warui</h3>
+                        <p>Technical Writer & Content Strategist</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="related-articles">
+                        <h3>Related Articles</h3>
+                        <ul>
+                            <li>
+                                <a href="rest-api-guide.html">
+                                    Understanding RESTful API Design
+                                    <span class="category-tag">Technical Guide</span>
+                                </a>
+                            </li>
+                            <!-- More related articles -->
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </article>
+
+    <!-- Article Footer -->
+    <footer class="article-footer">
+        <div class="container">
+            <div class="share-buttons">
+                <h3>Share this article</h3>
+                <div class="social-share">
+                    <button class="share-btn twitter">
+                        <i class="fab fa-twitter"></i> Twitter
+                    </button>
+                    <button class="share-btn linkedin">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </button>
+                    <button class="share-btn copy-link">
+                        <i class="fas fa-link"></i> Copy Link
+                    </button>
+                </div>
+            </div>
+
+            <div class="article-nav">
+                <a href="rest-api-guide.html" class="prev-article">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Previous Article</span>
+                    <h4>Understanding RESTful API Design</h4>
+                </a>
+                <a href="kubernetes-security.html" class="next-article">
+                    <span>Next Article</span>
+                    <h4>Kubernetes Security Best Practices</h4>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+    <script src="../js/portfolio-detail.js"></script>
+</body>
+</html>
