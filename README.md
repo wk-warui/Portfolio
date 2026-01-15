@@ -1,9 +1,9 @@
 # Kelvin Warui - Professional Portfolio
 
-## 📋 Overview
+## Overview
 A modern, responsive portfolio website showcasing my work as a Technical Writer & Content Strategist. Built with HTML5, CSS3, and vanilla JavaScript for optimal performance and maintainability.
 
-## 🚀 Features
+## Features
 - **Responsive Design**: Optimized for all devices and screen sizes
 - **Contact Integration**: Multiple contact options including:
   - Direct phone call
@@ -15,7 +15,7 @@ A modern, responsive portfolio website showcasing my work as a Technical Writer 
 - **Contact Form**: Interactive form with validation
 - **Social Proof**: Showcase of work statistics and achievements
 
-## 🛠️ Technologies Used
+## Technologies Used
 - HTML5
 - CSS3
 - JavaScript (Vanilla)
@@ -23,7 +23,7 @@ A modern, responsive portfolio website showcasing my work as a Technical Writer 
 - GitHub Pages (Hosting)
 - GitHub Actions (CI/CD)
 
-## 📁 Project Structure
+## Project Structure
 ```plaintext
 kelvin-warui-portfolio/
 ├── index.html          # Main HTML file
@@ -39,7 +39,7 @@ kelvin-warui-portfolio/
 └── DEPLOYMENT.md       # Deployment documentation
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Git
@@ -83,7 +83,7 @@ git commit -m "Description of changes"
 git push origin feature/your-feature-name
 ```
 
-## 📦 Deployment
+## Deployment
 
 ### Automatic Deployment
 The portfolio automatically deploys to GitHub Pages when changes are pushed to the main branch.
@@ -117,7 +117,7 @@ Update contact information in `index.html`:
 2. Configure DNS settings with your domain provider
 3. Update GitHub Pages settings
 
-## 🔍 SEO
+## SEO
 The portfolio is optimized for search engines with:
 - Semantic HTML structure
 - Meta descriptions
@@ -125,14 +125,14 @@ The portfolio is optimized for search engines with:
 - Structured data
 - Sitemap
 
-## 📱 Mobile Responsiveness
+## Mobile Responsiveness
 The portfolio is fully responsive and tested on:
 - Mobile devices (iOS/Android)
 - Tablets
 - Desktops
 - Various browsers (Chrome, Firefox, Safari, Edge)
 
-## ⚡ Performance
+## Performance
 Optimizations include:
 - Minified CSS and JavaScript
 - Optimized images
@@ -140,14 +140,14 @@ Optimizations include:
 - Efficient animations
 - Caching strategies
 
-## 🔒 Security
+## Security
 - Form validation
 - XSS protection
 - Content Security Policy
 - HTTPS enforcement
 - Secure contact methods
 
-## 🛠️ Maintenance
+## Maintenance
 
 ### Regular Updates
 1. Check for broken links
@@ -162,25 +162,25 @@ Common issues and solutions:
 - **Images not loading**: Verify file paths and optimization
 - **Deployment failed**: Check GitHub Actions logs
 
-## 📄 License
+## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 📞 Support
+## Support
 For support, please contact:
 - Email: kelvinwarui457@gmail.com
 - WhatsApp: +254769630531
 
-## 🙏 Acknowledgments
+## Acknowledgments
 - Font Awesome for icons
 - GitHub Pages for hosting
 - Contributors and reviewers
 
-## 🔄 Version History
+## Version History
 - v1.0.0 - Initial release
 - v1.1.0 - Added WhatsApp integration
 - v1.2.0 - Enhanced contact features
 
-## 🤝 Contributing
+## Contributing
 1. Fork the repository
 2. Create a feature branch
 3. Commit your changes
